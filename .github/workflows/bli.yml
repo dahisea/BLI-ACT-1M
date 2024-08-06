@@ -1,4 +1,4 @@
-name: BetaBuild
+name: Build
 
 on:
   workflow_dispatch: # Manually triggered
