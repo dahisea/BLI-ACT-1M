@@ -55,7 +55,7 @@ env:
   Ray_Serilog__WriteTo__0__Args__outputTemplate: ${{secrets.CONSOLELOGTEMPLATE}}         
 
 jobs:
-  run-daily-task:
+  run-daily-test:
     runs-on: ubuntu-latest
     environment: Production
 
@@ -74,7 +74,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
  
-    # Run daily task
+    # Run daily test
     - name: Test APP
       run: |
         cd ./src/Ray.BiliBiliTool.Console
