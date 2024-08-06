@@ -61,22 +61,21 @@ jobs:
     environment: Production
 
     steps:
-    # Set the server time zone to GMT+8
-    - name: Set time zone
+    - name: Set Shanghai zone
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
     # Checkout
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       
     # Setup .NET environment
     - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 6.0.x
  
     # Run daily test
-    - name: Test APP
+    - name: Test Api
       run: |
         cd ./src/Ray.BiliBiliTool.Console
         dotnet run --runTasks=Daily
