@@ -1,11 +1,12 @@
-name: btask
+name: BetaBuild
 
 on:
   workflow_dispatch: # Manually triggered
   schedule: # Scheduled trigger
     - cron: '0 16 * * *' 
-    # The cron expression is in UTC, which is 8 hours behind Beijing time. This runs daily at midnight Beijing time.
-
+  watch:
+    types: [started]
+   
 env:
   ASPNETCORE_ENVIRONMENT: ${{secrets.ENV}} # Environment
   Ray_BiliBiliCookies__1: ${{secrets.COOKIESTR}}
