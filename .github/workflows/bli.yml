@@ -12,6 +12,7 @@ env:
   Ray_BiliBiliCookies__1: ${{secrets.COOKIESTR}}
   Ray_BiliBiliCookies__2: ${{secrets.COOKIESTR2}}
   Ray_BiliBiliCookies__3: ${{secrets.COOKIESTR3}}
+  Ray_BiliBiliCookies__4: ${{secrets.COOKIESTR4}}
   # Push notifications:
   Ray_Serilog__WriteTo__3__Args__botToken: ${{secrets.PUSHTGTOKEN}} # Telegram
   Ray_Serilog__WriteTo__3__Args__chatId: ${{secrets.PUSHTGCHATID}}
