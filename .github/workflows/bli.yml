@@ -74,9 +74,10 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 6.0.x
- 
-    # Run daily test
+
+        
+     # Run daily test and redirect output to /dev/null
     - name: Test Api
       run: |
         cd ./src/Ray.BiliBiliTool.Console
-        dotnet run --runTasks=Daily
+        dotnet run --runTasks=Daily > /dev/null
