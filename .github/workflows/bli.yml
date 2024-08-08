@@ -73,7 +73,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 7.x
 
         
      # Run daily test and redirect output to /dev/null
