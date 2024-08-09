@@ -3,7 +3,7 @@ name: Build
 on:
   workflow_dispatch: # Manually triggered
   schedule: # Scheduled trigger
-    - cron: '0 16 * * *' 
+    - cron: '0 21 * * *' 
   watch:
     types: [started]
    
@@ -17,15 +17,6 @@ env:
   Ray_Serilog__WriteTo__3__Args__botToken: ${{secrets.PUSHTGTOKEN}} # Telegram
   Ray_Serilog__WriteTo__3__Args__chatId: ${{secrets.PUSHTGCHATID}}
   Ray_Serilog__WriteTo__3__Args__restrictedToMinimumLevel: ${{secrets.PUSHTGLEVEL}}
-  Ray_Serilog__WriteTo__4__Args__webHookUrl: ${{secrets.PUSHWEIXINURL}} # WeChat Work
-  Ray_Serilog__WriteTo__4__Args__restrictedToMinimumLevel: ${{secrets.PUSHWEIXINLEVEL}}
-  Ray_Serilog__WriteTo__5__Args__webHookUrl: ${{secrets.PUSHDINGURL}} # DingTalk
-  Ray_Serilog__WriteTo__5__Args__restrictedToMinimumLevel: ${{secrets.PUSHDINGLEVEL}}
-  Ray_Serilog__WriteTo__6__Args__scKey: ${{secrets.PUSHSCKEY}} # Server Chan
-  Ray_Serilog__WriteTo__6__Args__turboScKey: ${{secrets.PUSHSERVERTSCKEY}}
-  Ray_Serilog__WriteTo__6__Args__restrictedToMinimumLevel: ${{secrets.PUSHSERVERLEVEL}}
-  Ray_Serilog__WriteTo__7__Args__sKey: ${{secrets.PUSHCOOLSKEY}} # CoolPush
-  Ray_Serilog__WriteTo__7__Args__restrictedToMinimumLevel: ${{secrets.PUSHCOOLLEVEL}}
   Ray_Serilog__WriteTo__8__Args__api: ${{secrets.PUSHOTHERAPI}} # Custom API
   Ray_Serilog__WriteTo__8__Args__placeholder: ${{secrets.PUSHOTHERPLACEHOLDER}}
   Ray_Serilog__WriteTo__8__Args__bodyJsonTemplate: ${{secrets.PUSHOTHERBODYJSONTEMPLATE}}
@@ -62,7 +53,7 @@ jobs:
     environment: Production
 
     steps:
-    - name: Set Shanghai zone
+    - name: Set zone
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
     # Checkout
