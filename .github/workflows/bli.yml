@@ -71,4 +71,4 @@ jobs:
     - name: Test Api
       run: |
         cd ./src/Ray.BiliBiliTool.Console
-        dotnet run --runTasks=Daily > /dev/null
+        dotnet run --runTasks=Daily
